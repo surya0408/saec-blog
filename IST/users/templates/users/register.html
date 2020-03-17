@@ -1,0 +1,55 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+	<style type="text/css">
+		.form-mystyle{
+			text-align:center;
+		}
+		#id_username{
+			width:300px;
+			margin-left:220px;
+			background: transparent;
+    		border: none;
+    		border-bottom: 1px solid #000000;
+		}
+		#id_email{
+			width:300px;
+			margin-left:220px;
+			background: transparent;
+    		border: none;
+    		border-bottom: 1px solid #000000;
+		}
+		#id_password1{
+			width:300px;
+			margin-left:220px;
+			background: transparent;
+    		border: none;
+    		border-bottom: 1px solid #000000;
+		}
+		#id_password2{
+			width:300px;
+			margin-left:220px;
+			background: transparent;
+    		border: none;
+    		border-bottom: 1px solid #000000;
+		}
+		label{
+			font-weight:bold;
+		}
+	</style>
+	<div class="form-mystyle">
+			<form method="POST">
+				{% csrf_token %}
+				<fieldset class="form-group">
+					<legend class="mb-2">Join SAEC community!</legend>
+					{{ form|crispy }}
+				</fieldset>
+				<div class="form-group">
+					<button class="btn btn-outline-info" type="submit">Sign Up</button>
+				</div>
+			</form>
+				<p>
+				Already have an account?<a class="ml-2" href="#">Sign In</a>
+				</p>
+	</div>
+{% endblock content%}
